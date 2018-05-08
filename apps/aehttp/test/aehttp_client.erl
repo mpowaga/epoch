@@ -103,7 +103,7 @@ make_url(BaseUrl, Path, Params) ->
     binary_to_list(iolist_to_binary(Url)).
 
 make_query([{K, V} | T]) ->
-    [$?, [encode(K), $= , encode(V)
+    [$?, [encode(K), $=, encode(V)
           | [[$&, encode(K1), $=, encode(V1)] || {K1, V1} <- T]]];
 make_query([]) ->
     [].
